@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#111">
+<title>Wrap Studio</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<header><b>Wrap Studio</b><span class="sub">Model 3 (2024+)</span>
+<span class="spacer"></span>
+<button id="undo" title="Undo">↶</button><button id="redo" title="Redo">↷</button></header>
+<main id="stage"><canvas id="cv" width="1024" height="1024"></canvas>
+<div id="empty">Tap <b>Photos</b> to load pictures from your library.<br>Drag with one finger, pinch to scale and rotate.</div>
+<div id="hint"></div></main>
+<section id="panel" class="hidden">
+ <div class="row"><label>Opacity</label><input id="op" type="range" min="0" max="100"></div>
+ <div class="row"><label>Feather</label><input id="fe" type="range" min="0" max="50"></div>
+ <div class="row"><label>Fade</label><select id="fd"><option value="none">None</option><option value="l">From left</option><option value="r">From right</option><option value="t">From top</option><option value="b">From bottom</option></select><input id="fa" type="range" min="5" max="100"></div>
+ <div class="row"><label>Snap</label><select id="snap"><option value="">Fit to panel...</option></select></div>
+ <div class="row btns"><button id="up">Up</button><button id="down">Down</button><button id="dup">Copy</button><button id="erase">Eraser</button><button id="del" class="danger">Delete</button></div>
+ <div class="row" id="brushrow"><label>Brush</label><input id="br" type="range" min="10" max="200"></div>
+</section>
+<section id="exportp" class="hidden">
+ <canvas id="pv" width="1024" height="1024"></canvas>
+ <img id="car" src="vehicle_image.png" alt="Model 3">
+ <div class="row"><label>Name</label><input id="fn" value="my_wrap" maxlength="30" autocomplete="off" autocapitalize="off"></div>
+ <div class="row btns"><button id="save" class="primary">Save PNG</button><button id="closex">Back</button></div>
+ <p id="info"></p>
+ <p class="tip">Tip: copy the PNG to a USB drive in a top-level folder named <b>Wraps</b>, then open Toybox, Paint Shop, Wraps in the car.</p>
+ <p class="tip">Template from <a href="https://github.com/teslamotors/custom-wraps">teslamotors/custom-wraps</a>. Your photos never leave this device.</p>
+</section>
+<nav>
+ <label class="tb">＋<span>Photos</span><input id="file" type="file" accept="image/*" multiple hidden></label>
+ <button class="tb" id="layers">▤<span>Layer</span></button>
+ <button class="tb" id="tpl">◫<span>Outline</span></button>
+ <label class="tb"><input id="bg" type="color" value="#202830"><span>Color</span></label>
+ <button class="tb" id="exp">⇪<span>Export</span></button>
+</nav>
+<script src="vendor/pako.min.js"></script><script src="vendor/UPNG.js"></script><script src="app.js"></script>
+</body></html>

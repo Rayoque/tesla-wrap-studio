@@ -1,0 +1,9 @@
+*.jpg
+*.jpeg
+*.JPG
+*.JPEG
+*.heic
+*.HEIC
+photos/
+screens/
+*.mp4
